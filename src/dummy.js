@@ -49,14 +49,14 @@ class Model {
   }
 
   __removeSymbols(word) {
-    const symbols = ["!", ",", ".", ";", ":", "?"];
+    const symbols = ["!", ",", ".", ";", ":", "?", "@"];
 
-    let filteredWord = "";
+    let filteredWord = word;
     let clearedSymbol = "";
     for (const symbol of symbols) {
-      if (word.includes(symbol)) {
-        filteredWord = word.replace(symbol, "");
-        clearedSymbol = symbol;
+      while (filteredWord.includes(symbol)) {
+        filteredWord = filteredWord.replace(symbol, "");
+        clearedSymbol += symbol;
       }
     }
 
@@ -71,10 +71,28 @@ class View {
   constructor() {
     this.outputElement = document.querySelector(".translating-output");
     this.inputElement = document.querySelector(".translating-input");
+
+    this.outputCounterElement = document.querySelector('[data-counter="output"]');
+    this.inputCounterElement = document.querySelector('[data-counter="input"]');
   }
 
   setOutput(words) {
-    this.outputElement.value = words;
+    this.outputElement.textContent = words;
+  }
+
+  getWordCounter() {
+    const enteredValue = this.inputElement.value.trim().split(" ");
+
+    let cleared = enteredValue.filter((item) => {
+      return item.trim() !== "";
+    });
+
+    return cleared.length;
+  }
+
+  setWordCounter(input) {
+    this.outputCounterElement.textContent = input;
+    this.inputCounterElement.textContent = input;
   }
 }
 
@@ -92,9 +110,17 @@ class Controller {
 
   wordInputHandler(e) {
     const event = e.currentTarget;
-    if (!event.value.trim()) return;
+    if (!event.value.trim()) {
+      this.view.setWordCounter(0);
+      this.view.setOutput("");
+      return;
+    }
 
     const translated = this.model.translate(event.value);
+    const wordCounter = this.view.getWordCounter();
+
+    this.view.setWordCounter(wordCounter);
+
     this.view.setOutput(translated);
   }
 }
