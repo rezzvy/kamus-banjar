@@ -46,7 +46,7 @@ main #translation .entered-word-info {
   left: 30px;
   width: calc(100% - 60px);
   height: max-content;
-
+    z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;

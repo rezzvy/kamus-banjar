@@ -79,6 +79,11 @@ a {
   height: 40px;
   border: 1px solid black;
   border-radius: 50%;
+  background-color: white;
+}
+
+.btn-circular.transparent{
+  background-color: transparent;
 }
 
 .translation-box {
