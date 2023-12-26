@@ -1,0 +1,40 @@
+@media screen and (max-width: 1300px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  main #translation > .container > .wrap {
+    flex: 100%;
+  }
+
+  main {
+    margin: 15px 0;
+  }
+
+  textarea,
+  .textarea {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  main #translation textarea,
+  .textarea {
+    font-size: 20px;
+  }
+
+  p,
+  .text {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}

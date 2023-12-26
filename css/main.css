@@ -25,6 +25,7 @@ main #translation {
 main #translation > .container {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 main #translation > .container > .wrap {
