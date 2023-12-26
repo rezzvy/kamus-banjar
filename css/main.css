@@ -1,0 +1,47 @@
+header {
+  color: white;
+  background-color: rgb(30, 30, 30);
+  padding: 50px 0;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+main {
+  margin: 30px 0;
+}
+
+main #translation {
+  margin-bottom: 15px;
+}
+
+main #translation > .container {
+  display: flex;
+  gap: 15px;
+}
+
+main #translation > .container > .wrap {
+  flex: 1;
+}
+
+main #translation textarea,
+.textarea {
+  padding: 30px;
+  font-size: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+main #translation .entered-word-info {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  height: max-content;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -7,12 +7,12 @@ class Model {
         { key: "dia", acceptable: "inya", alternative: "sidin" },
         { key: "mereka", acceptable: "buhan inya", alternative: "" },
         { key: "kalian", acceptable: "buhan ikam", alternative: "" },
-        { key: "benar, betul", acceptable: "bujur", alternative: "" },
-        { key: "tidak, tak", acceptable: "kada", alternative: "" },
+        { key: "benar,betul", acceptable: "bujur", alternative: "" },
+        { key: "tidak,tak,engga,gk", acceptable: "kada", alternative: "" },
         { key: "cepat", acceptable: "lakas", alternative: "" },
         { key: "lambat", acceptable: "lawas", alternative: "" },
         { key: "sama", acceptable: "lawan", alternative: "" },
-        { key: "kalau", acceptable: "amun", alternative: "bila" },
+        { key: "kalau,misal", acceptable: "amun", alternative: "bila" },
         { key: "nama", acceptable: "ngaran", alternative: "" },
         { key: "sombong", acceptable: "pembualan", alternative: "" },
         { key: "cari-perhatian", acceptable: "pujungan", alternative: "" },
@@ -21,13 +21,15 @@ class Model {
         { key: "bohong", acceptable: "bote", alternative: "waluh" },
         { key: "malas", acceptable: "koler", alternative: "" },
         { key: "tolol", acceptable: "tambuk", alternative: "" },
-        { key: "bodoh, goblok", acceptable: "bungul", alternative: "" },
+        { key: "bodoh,goblok", acceptable: "bungul", alternative: "" },
       ],
     };
   }
 
   translate(words) {
     const splittedWords = words.split(" ");
+
+    console.log(splittedWords);
     const getTranslation = splittedWords.map((word) => this.getDatasetByWord(word));
 
     const translated = getTranslation.map((item) => (typeof item === "object" ? item.word : item));
