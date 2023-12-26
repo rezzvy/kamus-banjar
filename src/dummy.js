@@ -27,7 +27,7 @@ class Model {
   }
 
   translate(words) {
-    const splittedWords = words.split(" ");
+    const splittedWords = text.split(/ |\n/);
 
     const getTranslation = splittedWords.map((word) => this.getDatasetByWord(word));
 
