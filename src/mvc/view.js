@@ -13,7 +13,7 @@ class View {
   }
 
   speak(which) {
-    if (!("speechSynthesis" in window)) return;
+    if (!("speechSynthesis" in window)) return alert("Your browser does not support this feature!");
 
     if (this.currentPlayingVoice !== null) {
       speechSynthesis.cancel();
