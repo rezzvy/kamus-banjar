@@ -32,13 +32,18 @@ main #translation > .container > .wrap {
   flex: 1;
 }
 
-main #translation textarea,
-.textarea {
-  padding: 30px;
+main #translation .text-area-wrap {
+  padding: 30px 30px 70px 30px;
   font-size: 22px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   margin-bottom: 10px;
+}
+
+main #translation textarea,
+.textarea {
+  font-size: inherit;
+  border: unset;
 }
 
 main #translation .entered-word-info {
@@ -47,7 +52,7 @@ main #translation .entered-word-info {
   left: 30px;
   width: calc(100% - 60px);
   height: max-content;
-    z-index: 2;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
